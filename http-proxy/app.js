@@ -11,4 +11,5 @@ app.use(cookieParser());
 app.all('/api', lambda_http_proxy.invoke);
 
 app.set('port', 3000);
+app.listen(app.get('port'));
 module.exports = app;
