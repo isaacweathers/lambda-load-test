@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.all('/api', lambda_http_proxy.invoke);
+app.all('*', lambda_http_proxy.invoke);
 
 app.set('port', 3000);
 app.listen(app.get('port'));
