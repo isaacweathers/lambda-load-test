@@ -51,5 +51,6 @@ cd wrk
 sudo make
 
 # Run tests
-#sh loadtest.sh
+#./loadtest1.sh > results1.txt
+#./loadtest2.sh > results2.txt
 ```

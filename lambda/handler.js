@@ -10,7 +10,7 @@ module.exports.test = (event, context, callback) => {
     })
   };
 
-  if (_.isNil(event.query)) {
+  if (_.isNil(event.query.timeout)) {
     callback(null, response);
   } else {
     setTimeout(function() {
