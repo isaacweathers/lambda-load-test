@@ -1,6 +1,13 @@
 # lambda-load-test
 AWS Lambda Load Test
 
+This project aims to find the limits of AWS Lambda behind a custom http proxy (nginx + node.js).
+
+## Setup
+Create two c4.8xlarge EC2 instances with the following User Data init scripts.
+* Security Group with port 80 open.
+* Instance Role with permission to AWS Lambda and CloudWatch.
+
 ### Server - User Data
 ```
 #!/bin/bash
@@ -54,3 +61,6 @@ sudo make
 #./loadtest1.sh > results1.txt
 #./loadtest2.sh > results2.txt
 ```
+
+## Results
+The requests per second seem to plateau at 120 rps.  I've ased AWS for a Lambda service limit increase.

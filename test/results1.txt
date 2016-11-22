@@ -1,0 +1,97 @@
+Running 5m test @ http://172.16.1.72/api?timeout=20
+  1 threads and 1 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    56.32ms   53.52ms 993.46ms   97.54%
+    Req/Sec    19.71      4.78    30.00     78.05%
+  5817 requests in 5.00m, 3.56MB read
+Requests/sec:     19.38
+Transfer/sec:     12.15KB
+
+Running 5m test @ http://172.16.1.72/api?timeout=20
+  1 threads and 2 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    57.15ms   69.98ms   1.40s    97.81%
+    Req/Sec    40.03      8.09    60.00     59.02%
+  11968 requests in 5.00m, 7.33MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:     39.89
+Transfer/sec:     25.01KB
+
+Running 5m test @ http://172.16.1.72/api?timeout=20
+  1 threads and 3 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    54.05ms   58.17ms   1.08s    98.04%
+    Req/Sec    61.71      9.86    90.00     75.66%
+  18488 requests in 5.00m, 11.32MB read
+Requests/sec:     61.61
+Transfer/sec:     38.63KB
+
+Running 5m test @ http://172.16.1.72/api?timeout=20
+  1 threads and 4 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    56.41ms   80.68ms   1.89s    98.29%
+    Req/Sec    81.33     12.21   111.00     80.54%
+  24360 requests in 5.00m, 14.91MB read
+  Socket errors: connect 0, read 0, write 0, timeout 2
+Requests/sec:     81.18
+Transfer/sec:     50.89KB
+
+Running 5m test @ http://172.16.1.72/api?timeout=20
+  1 threads and 5 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    83.03ms  147.18ms   1.66s    94.58%
+    Req/Sec    95.48     19.68   131.00     78.84%
+  27052 requests in 5.00m, 16.56MB read
+  Socket errors: connect 0, read 0, write 0, timeout 27
+Requests/sec:     90.15
+Transfer/sec:     56.51KB
+
+Running 5m test @ http://172.16.1.72/api?timeout=20
+  1 threads and 6 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   108.41ms  189.12ms   1.65s    91.52%
+    Req/Sec   118.64     26.85   161.00     81.71%
+  31456 requests in 5.00m, 19.26MB read
+  Socket errors: connect 0, read 0, write 0, timeout 7
+Requests/sec:    104.83
+Transfer/sec:     65.72KB
+
+Running 5m test @ http://172.16.1.72/api?timeout=20
+  1 threads and 7 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   122.99ms  199.63ms   1.91s    91.15%
+    Req/Sec   111.49     38.80   171.00     73.20%
+  28315 requests in 5.00m, 17.33MB read
+  Socket errors: connect 0, read 0, write 0, timeout 32
+Requests/sec:     94.36
+Transfer/sec:     59.15KB
+
+Running 5m test @ http://172.16.1.72/api?timeout=20
+  1 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   122.87ms  196.52ms   1.65s    90.97%
+    Req/Sec   132.36     28.96   191.00     88.93%
+  34864 requests in 5.00m, 21.34MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:    116.19
+Transfer/sec:     72.84KB
+
+Running 5m test @ http://172.16.1.72/api?timeout=20
+  1 threads and 9 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   127.64ms  192.50ms   1.62s    91.17%
+    Req/Sec   131.44     29.43   181.00     84.82%
+  34944 requests in 5.00m, 21.39MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:    116.46
+Transfer/sec:     73.01KB
+
+Running 10m test @ http://172.16.1.72/api?timeout=20
+  1 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   133.09ms  189.51ms   1.80s    91.44%
+    Req/Sec   131.92     27.87   190.00     81.69%
+  70254 requests in 10.00m, 43.01MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:    117.08
+Transfer/sec:     73.40KB

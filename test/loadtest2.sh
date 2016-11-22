@@ -18,11 +18,3 @@ echo ""
 /lambda-load-test/test/wrk/wrk -t1 -c9 -d5m http://172.16.1.72/api?ec2_timeout=20
 echo ""
 /lambda-load-test/test/wrk/wrk -t1 -c10 -d10m http://172.16.1.72/api?ec2_timeout=20
-echo ""
-/lambda-load-test/test/wrk/wrk -t1 -c20 -d10m http://172.16.1.72/api?ec2_timeout=20
-echo ""
-/lambda-load-test/test/wrk/wrk -t1 -c30 -d10m http://172.16.1.72/api?ec2_timeout=20
-echo ""
-/lambda-load-test/test/wrk/wrk -t1 -c40 -d10m http://172.16.1.72/api?ec2_timeout=20
-echo ""
-/lambda-load-test/test/wrk/wrk -t1 -c50 -d10m http://172.16.1.72/api?ec2_timeout=20
