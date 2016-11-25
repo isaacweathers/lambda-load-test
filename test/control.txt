@@ -40,7 +40,7 @@ Requests/sec:   2537.60
 Transfer/sec:      4.22MB
 
 #
-# Node backend to Lambda without timeout
+# Nginx to Node backend to Lambda without timeout
 #
 [root@ip-172-16-1-152 test]# /lambda-load-test/test/wrk/wrk -t1 -c10 -d30s http://172.16.1.72/api
 Running 30s test @ http://172.16.1.72/api
@@ -51,3 +51,43 @@ Running 30s test @ http://172.16.1.72/api
   5911 requests in 30.05s, 3.46MB read
 Requests/sec:    196.73
 Transfer/sec:    117.76KB
+
+#
+# Node backend to Lambda without timeout (Same EC2 as node.js)
+# Express.js
+#
+[root@ip-172-16-1-72 wrk]# ./wrk -t1 -c10 -d30s -H "x-FunctionName: test-dev-test" http://localhost:3000
+Running 30s test @ http://localhost:3000
+  1 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   167.31ms  271.06ms   1.05s    83.98%
+    Req/Sec   327.94    129.78   490.00     78.17%
+  6667 requests in 30.05s, 3.44MB read
+Requests/sec:    221.89
+Transfer/sec:    117.23KB
+
+#
+# Node backend to Lambda without timeout (Same EC2 as node.js)
+# node.js
+#
+[root@ip-172-16-1-72 wrk]# ./wrk -t1 -c20 -d30s -H "x-FunctionName: test-dev-test" http://localhost:3001
+Running 30s test @ http://localhost:3001
+  1 threads and 20 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   234.22ms  331.84ms   1.97s    84.96%
+    Req/Sec   244.61     88.20   360.00     79.90%
+  5181 requests in 30.04s, 1.56MB read
+Requests/sec:    172.49
+Transfer/sec:     53.06KB
+
+#
+# Use node to execute calls to lambda
+#
+[root@ip-172-16-1-72 http-proxy]# node test.js 10
+info: 10 - 131ms - 87.4 avg. ms
+[root@ip-172-16-1-72 http-proxy]# node test.js 100
+info: 100 - 513 - 306.86
+[root@ip-172-16-1-72 http-proxy]# node test.js 1000
+info: 1000 - 3874 - 2203.555
+[root@ip-172-16-1-72 http-proxy]# node test.js 10000
+info: 10000 - 37370 - 20516.2411

@@ -18,12 +18,13 @@
   },
   "homepage": "https://github.com/WPMedia/lambda-load-test#readme",
   "dependencies": {
+    "async": "^2.1.4",
     "aws-sdk": "^2.6.15",
-    "lodash": "^4.16.6",
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
-    "winston": "^2.3.0",
-    "lambda-http-proxy": "0.0.2"
+    "lambda-http-proxy": "0.0.2",
+    "lodash": "^4.16.6",
+    "winston": "^2.3.0"
   }
 }
