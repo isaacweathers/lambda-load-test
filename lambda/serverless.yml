@@ -21,3 +21,5 @@ provider:
 functions:
   test:
     handler: handler.test
+    events:
+      - http: GET test

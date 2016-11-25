@@ -10,7 +10,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.all('*', function(req, res, next) {
-    if (_.isNil(req.query.ec2_timeout)) {
+	if (!_.isNil(req.query.node)) {
+		res.json({node: true});
+	} else if (_.isNil(req.query.ec2_timeout)) {
         lambda_http_proxy.invoke(req, res, next);
     } else {
         setTimeout(function() {

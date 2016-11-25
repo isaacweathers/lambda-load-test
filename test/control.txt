@@ -1,0 +1,53 @@
+
+#
+# NGINX Welcome Page
+#
+[root@ip-172-16-1-152 test]# /lambda-load-test/test/wrk/wrk -t1 -c10 -d30s http://172.16.1.72
+Running 30s test @ http://172.16.1.72
+  1 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   241.88us   37.97us   1.35ms   85.11%
+    Req/Sec    40.20k   605.12    41.87k    72.33%
+  1199811 requests in 30.00s, 4.48GB read
+Requests/sec:  39992.99
+Transfer/sec:    152.90MB
+
+#
+# Cloudfront to Lambda without timeout
+#
+[root@ip-172-16-1-152 test]# /lambda-load-test/test/wrk/wrk -t1 -c10 -d30s https://vl43qi8gcf.execute-api.us-east-1.amazonaws.com/dev/test
+Running 30s test @ https://vl43qi8gcf.execute-api.us-east-1.amazonaws.com/dev/test
+  1 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    34.21ms   66.27ms   1.01s    96.23%
+    Req/Sec   420.41     71.19   510.00     85.00%
+  12571 requests in 30.04s, 20.04MB read
+Requests/sec:    418.53
+Transfer/sec:    683.06KB
+
+#
+# Node backend (no lambda call) without timeout
+#
+[root@ip-172-16-1-152 test]# /lambda-load-test/test/wrk/wrk -t1 -c10 -d30s http://172.16.1.72/api?node=true
+Running 30s test @ http://172.16.1.72/api?node=true
+  1 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.58ms   31.52ms 639.53ms   99.05%
+    Req/Sec     2.55k     1.37k    4.85k    67.67%
+  76178 requests in 30.02s, 126.75MB read
+  Non-2xx or 3xx responses: 31153
+Requests/sec:   2537.60
+Transfer/sec:      4.22MB
+
+#
+# Node backend to Lambda without timeout
+#
+[root@ip-172-16-1-152 test]# /lambda-load-test/test/wrk/wrk -t1 -c10 -d30s http://172.16.1.72/api
+Running 30s test @ http://172.16.1.72/api
+  1 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   173.13ms  274.38ms   1.08s    83.97%
+    Req/Sec   296.08    112.33   430.00     77.49%
+  5911 requests in 30.05s, 3.46MB read
+Requests/sec:    196.73
+Transfer/sec:    117.76KB
